@@ -1,26 +1,53 @@
-"use client";
-import Navigator from "@/componets/Navigator/Navigator";
-import styles from "./lineal-congruente.module.css";
-
-<<<<<<< HEAD
+import styles from "./form.module.css";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Layout } from "@/componets/Layouts/Layout";
 
 const initState = {
-  x0: "",
-  a: "",
-  c: "",
-  m: "",
-};
-=======
-import Form from "@/componets/Form/Form";
->>>>>>> upstream/main
+    x0: "",
+    a: "",
+    c: "",
+    m: "",
+  };
 
-export default function LinealCongruente() {
+
+export default function Form() {
+  const [data, setData] = useState(initState);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(JSON.stringify(data));
+    const { x0, a, c, m } = data;
+    console.log(x0);
+
+    // Send data to API route
+    const res = await fetch("http://localhost:3000/api/hello", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        x0,
+        a,
+        c,
+        m,
+      }),
+    });
+
+    const result = await res.json();
+    console.log(result);
+
+    // Navigate to thank you
+  };
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+
+    setData((prevData) => ({
+      ...prevData,
+      [name]: e.target.value,
+    }));
+  };
   return (
-<<<<<<< HEAD
-    <Layout>
+    <>
       <div className={styles.main}>
         <div className={styles.fondo}>
           <div>
@@ -69,21 +96,6 @@ export default function LinealCongruente() {
           </div>
         </div>
       </div>
-    </Layout>
-=======
-    <>
-      <div className={styles.nav}>
-        <Navigator
-          pathNames={[
-            Routes.HOME,
-            Routes.LINEAL_CONGRUENTE,
-            Routes.ESTANDAR_MINIMO,
-            Routes.ESTANDAR_MINIMO_FACT,
-          ]}
-        />
-      </div>
-      <Form />
     </>
->>>>>>> upstream/main
   );
 }
