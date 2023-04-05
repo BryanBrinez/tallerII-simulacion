@@ -1,5 +1,9 @@
+import { Layout } from "@/componets/Layouts/Layout";
+
 export default function EstandarMinimo() {
   return (
-    <div>EstandarMinimo</div>
+    <Layout>
+      <h1>Estándar Mínimo</h1>
+    </Layout>
   )
 }

@@ -1,10 +1,10 @@
 "use client";
 import Navigator from "@/componets/Navigator/Navigator";
 import styles from "./lineal-congruente.module.css";
-import { Routes } from "@/app/models/route.model";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Layout } from "@/componets/Layouts/Layout";
 
 const initState = {
   x0: "",
@@ -55,17 +55,7 @@ export default function LinealCongruente() {
 
   const canSave = [...Object.values(data)].every(Boolean);
   return (
-    <>
-      <div className={styles.nav}>
-        <Navigator
-          pathNames={[
-            Routes.HOME,
-            Routes.LINEAL_CONGRUENTE,
-            Routes.ESTANDAR_MINIMO,
-            Routes.ESTANDAR_MINIMO_FACT,
-          ]}
-        />
-      </div>
+    <Layout>
       <div className={styles.main}>
         <div className={styles.fondo}>
           <div>
@@ -114,6 +104,6 @@ export default function LinealCongruente() {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
