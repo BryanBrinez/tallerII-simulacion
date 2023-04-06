@@ -7,7 +7,7 @@ export default function Home({ pathNames }) {
     <div className={styles.main}>
       <div className={styles.routes}>
         <Navigator 
-          pathNames={[Routes.HOME, Routes.GENERADORES]}
+          pathNames={[Routes.GENERADORES]}
         />
       </div>
     </div>
