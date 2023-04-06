@@ -1,3 +1,4 @@
+
 export function numRandom(x0, a, c, m) {
   var xn = x0;
   var periodo = 0;
@@ -14,8 +15,17 @@ export function numRandom(x0, a, c, m) {
 
   //vXn.forEach(xn => console.log(xn));
   //rn.forEach(rn => console.log(rn));
-  //console.log("El periodo es: ", periodo)
-  return rn
+  //console.log("El periodo es: ",periodo)
+  return {
+    x0,
+    a,
+    c,
+    m,
+    vXn,
+    rn,
+    periodo
+  }
 }
 
-numRandom(27, 17, 43, 100);
+//numRandom(27, 17, 43, 100);
+

@@ -2,15 +2,15 @@ import styles from "./form.module.css";
 import { useState } from "react";
 
 const initState = {
-    x0: "",
-    a: "",
-    c: "",
-    m: "",
-  };
+  x0: "",
+  a: "",
+  c: "",
+  m: "",
+};
 
-
-export default function Form() {
+export default function Form({ props }) {
   const [data, setData] = useState(initState);
+  const id = props.id
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,6 +29,7 @@ export default function Form() {
         a,
         c,
         m,
+        id,
       }),
     });
 
@@ -50,7 +51,9 @@ export default function Form() {
     <>
       <div className={styles.main}>
         <div className={styles.fondo}>
+        <h1>{props.name}</h1>
           <div>
+            
             <form className={styles.form} onSubmit={handleSubmit}>
               <input
                 className={styles.input}

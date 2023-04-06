@@ -1,5 +1,24 @@
+"use client"
+import Navigator from "@/componets/Navigator/Navigator";
+import styles from "../generadores.module.css";
+import { Routes } from "@/app/models/route.model";
+import Form from "@/componets/Form/Form";
+
+
 export default function EstandarMinimo() {
   return (
-    <div>EstandarMinimo</div>
-  )
+    <>
+      <div className={styles.nav}>
+        <Navigator
+          pathNames={[
+            Routes.HOME,
+            Routes.LINEAL_CONGRUENTE,
+            Routes.ESTANDAR_MINIMO,
+            Routes.ESTANDAR_MINIMO_FACT,
+          ]}
+        />
+      </div>
+      <Form props={{id:"3",name:"Estandar Mínimo"}} />
+    </>
+  );
 }
