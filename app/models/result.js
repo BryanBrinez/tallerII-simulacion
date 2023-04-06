@@ -21,6 +21,22 @@ const dataSchema = new Schema({
     required: [true, "Ingrese m"],
     trim: true,
   },
+  vXn: {
+    type: Array,
+    required: [true, "Ingrese el array de vxn"],
+    trim: true,
+  },
+  rn: {
+    type: Array,
+    required: [true, "Ingrese el array de rn"],
+    trim: true,
+  },
+  periodo: {
+    type: String,
+    required: [true, "Ingrese el array de rn"],
+    trim: true,
+  },
+
 }, {
   versionKey: false // You should be aware of the outcome after set to false
 });
