@@ -1,3 +1,4 @@
+
 //el generador de estandar minimo: calculo modular con factorizacion aproximada de m
 //El codigo se ejecuta colocando en la terminal "node generadorEstandarMinimo.js"
 
@@ -30,3 +31,4 @@ function xnC(x0, a, m) {
 numRandom(5, 12, 21);
 
 //console.log(xnC(5, 15, 21));
+

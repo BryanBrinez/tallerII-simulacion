@@ -1,8 +1,3 @@
-//var x0 = 27;
-//var a = 17;
-//var c = 43;
-//var m = 100;//
-//El codigo se ejecuta colocando en la terminal "node generadorLinealCongruente.js"
 
 export function numRandom(x0, a, c, m) {
   var xn = x0;
@@ -12,7 +7,9 @@ export function numRandom(x0, a, c, m) {
   do {
     periodo++;
     xn = (a * xn + c) % m;
-    rn.push(xn/m)
+    rn.push(xn / m)
+    if (vXn.some(item => item === xn))
+      break
     vXn.push(xn)
   } while (xn != x0);
 
@@ -31,3 +28,4 @@ export function numRandom(x0, a, c, m) {
 }
 
 //numRandom(27, 17, 43, 100);
+
